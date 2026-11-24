@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BRICK – Think clearly. Get it done.</title>
+<meta name="description" content="BRICK is a small family of focused tools. Brick Notes is your space to think. Brickday is your space to execute.">
+<meta name="theme-color" content="#D3EAFF">
+<meta property="og:type" content="website"><meta property="og:site_name" content="BRICK"><meta property="og:title" content="BRICK – Think clearly. Get it done."><meta property="og:description" content="Brick Notes is your space to think. Brickday is your space to execute.">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="BRICK – Think clearly. Get it done.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='10' width='50' height='50' rx='9' fill='%231F2340'/%3E%3Crect x='4' y='4' width='50' height='50' rx='9' fill='%23F7D257' stroke='%231F2340' stroke-width='5'/%3E%3Cg fill='%23FFF0A8' stroke='%231F2340' stroke-width='3'%3E%3Ccircle cx='19' cy='19' r='5.5'/%3E%3Ccircle cx='39' cy='19' r='5.5'/%3E%3Ccircle cx='19' cy='39' r='5.5'/%3E%3Ccircle cx='39' cy='39' r='5.5'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--ink:#1F2340;--mu:#5C6085;--bg:#FAF8FF;--sf:#fff;--page:#D3EAFF;--pu:#A8A4FF;--pd:#7F7BF0;--ye:#F7D257;--mi:#6FE8B4;--co:#FF8F7A;--sh:4px 4px 0 var(--ink);color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font:17px/1.55 "Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+a{color:inherit}:focus-visible{outline:3px solid var(--pd);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+.btn{font:inherit;font-weight:800;color:var(--ink);background:var(--ye);border:2.5px solid var(--ink);border-radius:8px 8px 8px 2px;padding:12px 20px;box-shadow:var(--sh);cursor:pointer;text-decoration:none;display:inline-block;transition:transform .1s,box-shadow .1s}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}.btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+.btn.pu{background:var(--pu)}.btn.mi{background:var(--mi)}.btn.pl{background:var(--sf)}.btn.sm{padding:5px 12px;font-size:14px;box-shadow:3px 3px 0 var(--ink)}
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;gap:28px;padding:12px clamp(20px,5vw,40px);padding-top:calc(12px + env(safe-area-inset-top,0px));transition:background .2s,border-color .2s;border-bottom:2.5px solid transparent}
+.nav.on{background:rgba(250,248,255,.94);border-color:var(--ink)}
+.wm{font-weight:800;font-size:22px;letter-spacing:.06em;text-decoration:none;display:flex;align-items:center;gap:10px;margin-right:auto}
+.wm i,.fi{width:24px;height:24px;background:var(--ye);border:2.5px solid var(--ink);border-radius:6px 6px 6px 1px;box-shadow:2px 2px 0 var(--ink);display:inline-block}
+.nav nav{display:flex;gap:26px}.nav nav a{font-weight:600;text-decoration:none}.nav nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.nav .btn{padding:8px 16px;font-size:15px;box-shadow:3px 3px 0 var(--ink)}
+/* type */
+.eye{font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 18px;display:flex;align-items:center;gap:10px}
+.eye::before{content:"";width:16px;height:16px;background:var(--c,var(--ye));border:2.5px solid var(--ink);border-radius:4px 4px 4px 1px}
+h1,h2,h3,h4{margin:0}
+h1{font-size:clamp(50px,10vw,138px);line-height:.94;letter-spacing:-.045em;font-weight:800}
+h2{font-size:clamp(38px,6.8vw,92px);line-height:1;letter-spacing:-.04em;font-weight:800}
+.sub{font-size:clamp(18px,2.2vw,24px);line-height:1.4;color:var(--mu);max-width:34em;margin:24px 0 32px}
+.hl{display:inline-block;background:var(--ye);border:3px solid var(--ink);border-radius:10px 10px 10px 3px;box-shadow:6px 6px 0 var(--ink);padding:0 .14em;transform:rotate(-1.2deg);margin-top:.12em}
+/* hero */
+.hero{background:var(--page) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='22' viewBox='0 0 44 22'%3E%3Cpath d='M0 11 Q11 1 22 11 T44 11' fill='none' stroke='%23B6D6F7' stroke-width='2.5'/%3E%3C/svg%3E");padding:clamp(110px,16vw,170px) 0 0;border-bottom:2.5px solid var(--ink);overflow:hidden}
+.stagew{position:relative;max-width:1120px;margin:clamp(40px,6vw,72px) auto 0;padding:0 clamp(20px,5vw,40px)}
+.stage{position:absolute;left:clamp(20px,5vw,40px);top:0;transform-origin:top left;pointer-events:none;user-select:none}
+.stage .mock{position:absolute}
+/* sections */
+.sec{padding:clamp(80px,12vw,160px) 0}
+.dark{background:var(--ink);color:#F2F0FF}.dark .eye::before{border-color:#F2F0FF}
+.dark .big{font-size:clamp(30px,5.2vw,68px);line-height:1.08;letter-spacing:-.035em;font-weight:800;margin:0;max-width:16em}
+.big span{display:block}.big .d{color:#9A9DC4}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,5vw,64px);margin-top:clamp(48px,8vw,96px)}
+.duo b{display:block;font-size:clamp(52px,11vw,150px);line-height:.95;letter-spacing:-.05em}
+.duo div:first-child b{color:var(--pu)}.duo div:last-child b{color:var(--ye)}
+.duo p{margin:12px 0 0;font-size:18px;color:#C9CBE6;max-width:20em}.duo strong{color:#fff}
+.fine{margin:48px 0 0;color:#9A9DC4;font-size:15px}
+.notes{background:#E9E7FF;--c:var(--pu)}.day{background:#FFF4CC;--c:var(--ye)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:clamp(32px,5vw,72px);align-items:center}
+.split.rev{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.show{margin-top:clamp(40px,6vw,72px);position:relative}
+.feat{list-style:none;padding:0;margin:36px 0 36px;display:grid;gap:22px}
+.feat li{padding-left:22px;border-left:4px solid var(--ink)}.feat b{font-size:20px;display:block;letter-spacing:-.01em}.feat span{color:var(--mu)}
+.cap{font-size:14px;color:var(--mu);margin:16px 0 0}.cap button{font:inherit;font-size:14px;background:none;border:0;padding:0;color:var(--mu);text-decoration:underline;cursor:pointer}
+.fut{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:clamp(40px,6vw,72px)}
+.fc{border:2.5px solid var(--ink);border-radius:10px 10px 10px 2px;padding:20px;background:var(--sf);box-shadow:var(--sh);min-height:170px;display:flex;flex-direction:column;justify-content:space-between}
+.fc b{font-size:24px;letter-spacing:-.02em;display:block}.fc small{font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.fc.soon{background:transparent;border-style:dashed;box-shadow:none;color:var(--mu)}
+.fc.n{background:var(--pu)}.fc.d{background:var(--ye)}
+.end{background:var(--page) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='22' viewBox='0 0 44 22'%3E%3Cpath d='M0 11 Q11 1 22 11 T44 11' fill='none' stroke='%23B6D6F7' stroke-width='2.5'/%3E%3C/svg%3E");border-top:2.5px solid var(--ink);text-align:center}
+.end h2{font-size:clamp(40px,8vw,112px)}.end h2 span{display:block}
+footer{background:var(--ink);color:#C9CBE6;padding:40px 0 calc(40px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center}footer .wm{color:#fff}footer a{text-decoration:none}footer a:hover{text-decoration:underline}
+footer .l{display:flex;gap:24px;flex-wrap:wrap}footer small{width:100%;color:#9A9DC4}
+/* faithful product renderings (illustrations of the real interfaces) */
+.mock{border:2.5px solid var(--ink);border-radius:10px 10px 10px 2px;box-shadow:8px 8px 0 var(--ink);background:var(--page);font-size:14px;line-height:1.4;overflow:hidden;text-align:left;color:var(--ink)}
+.mock .b{font-weight:800;border:2.5px solid var(--ink);border-radius:7px 7px 7px 2px;padding:5px 11px;box-shadow:3px 3px 0 var(--ink);background:var(--ye);display:inline-block;font-size:13px;line-height:1.3;color:var(--ink);font-family:inherit}
+.mock .b.pu{background:var(--pu)}.mock .b.pl{background:var(--sf)}.mock .b.mi{background:var(--mi)}
+.nb{width:660px;display:grid;grid-template-columns:200px 1fr;height:430px}
+.nb aside{background:var(--bg);border-right:2.5px solid var(--ink);padding:12px;display:grid;gap:10px;align-content:start}
+.mb{font-weight:800;font-size:16px;display:flex;gap:7px;align-items:center}.mb i{width:15px;height:15px;background:var(--pu);border:2px solid var(--ink);border-radius:4px 4px 4px 1px}
+.chips{display:flex;gap:5px;flex-wrap:wrap}.chips span{font-weight:700;font-size:11px;background:var(--sf);border:2px solid var(--ink);border-radius:4px 4px 4px 1px;padding:0 6px}.chips .on{background:var(--pu)}
+.li{background:var(--sf);border:2.5px solid var(--ink);border-radius:7px 7px 7px 2px;padding:6px 9px;box-shadow:2px 2px 0 var(--ink)}.li.on{background:#E4E2FF}
+.li b,.li small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.li small{color:var(--mu);font-size:11px}.li u{text-decoration:none;font-size:10px;background:var(--ye);border:1.5px solid var(--ink);border-radius:3px;padding:0 4px;margin-right:5px}
+.nbm{padding:12px 14px;display:grid;gap:8px;align-content:start;background:var(--page)}
+.bar1{display:flex;gap:8px;align-items:center}.bar1 .t{flex:1;background:var(--sf);border:2.5px solid var(--ink);border-radius:6px 6px 6px 1px;padding:3px 10px;font-weight:800;font-size:20px;letter-spacing:-.02em}.bar1 em{font-style:normal;font-size:11px;font-weight:700}
+.tb{background:var(--sf);border:2.5px solid var(--ink);border-radius:7px 7px 7px 2px;padding:4px 6px;display:flex;gap:10px;font-weight:700;font-size:12px;flex-wrap:wrap;box-shadow:3px 3px 0 var(--ink)}
+.pg{background:var(--sf);border:2.5px solid var(--ink);border-radius:8px 8px 8px 2px;box-shadow:3px 3px 0 var(--ink);padding:14px 18px;font-size:14px;line-height:1.65}
+.pg h4{font-size:21px;letter-spacing:-.02em;margin:0 0 4px}.pg p{margin:4px 0}
+.nl{background:#E4E2FF;border:2px solid var(--ink);border-radius:5px 5px 5px 1px;padding:0 6px;font-weight:700}
+.pg math{font-size:1.05em;padding:0 3px}
+.cl{list-style:none;margin:6px 0 0;padding:0}.cl li{position:relative;padding-left:26px}.cl li::before{content:"";position:absolute;left:1px;top:4px;width:14px;height:14px;border:2.5px solid var(--ink);border-radius:3px 3px 3px 1px;background:var(--sf)}
+.cl li.x{color:var(--mu)}.cl li.x::before{content:"✓";background:var(--mi);font-size:10px;line-height:9px;text-align:center;font-weight:800;color:var(--ink)}
+.ft{font-size:11px;color:var(--mu);display:flex;gap:12px;flex-wrap:wrap}
+.bd{width:400px;padding:16px;display:grid;gap:11px;position:relative}
+.trw{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.trw h3{font-size:30px;font-weight:800;letter-spacing:-.03em}
+.xpb{font-weight:800;font-size:19px;background:var(--pu);border:2.5px solid var(--ink);border-radius:7px 7px 7px 2px;box-shadow:3px 3px 0 var(--ink);padding:3px 11px;line-height:1.2}
+.stk{font-weight:800;font-size:12px;background:var(--sf);border:2.5px solid var(--ink);border-radius:5px 5px 5px 1px;padding:2px 8px;box-shadow:2px 2px 0 var(--ink)}
+.qa{display:flex;gap:7px}.qb{flex:1;display:flex;background:var(--bg);border:2.5px solid var(--ink);border-radius:6px 6px 6px 1px;min-width:0}.qb .ph{flex:1;padding:6px 10px;color:var(--mu);white-space:nowrap;overflow:hidden;font-size:13px}
+.dp{border-left:2px solid #E4E2EE;padding:6px 9px;font-weight:700;display:flex;align-items:center;gap:6px;font-size:13px}.sw{width:12px;height:12px;border:2px solid var(--ink);border-radius:3px 3px 3px 1px;background:var(--mi)}
+.tk{border:2.5px solid var(--ink);border-radius:9px 9px 9px 2px;box-shadow:3px 3px 0 var(--ink);padding:11px 13px;display:grid;grid-template-columns:1fr auto;gap:4px 10px}
+.tk.hard{background:#FFCDBF}.tk.med{background:#F9E6A6}.tk.easy{background:#C6F3DC}.tk h4{font-size:17px;letter-spacing:-.01em}.tk p{margin:1px 0 0;color:var(--mu);font-size:12px}
+.tg{display:inline-block;margin:7px 5px 0 0;font-weight:800;font-size:11px;border:2px solid var(--ink);border-radius:4px 4px 4px 1px;padding:0 7px}.tg.hard{background:var(--co)}.tg.med{background:var(--ye)}.tg.easy{background:var(--mi)}.tg.r{background:var(--sf)}
+.sd{display:flex;gap:6px;align-items:flex-start}.dots{border:2.5px solid var(--ink);border-radius:5px 5px 5px 1px;background:var(--sf);padding:0 8px;font-weight:800;box-shadow:2px 2px 0 var(--ink);line-height:1.5}
+.fl{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;background:rgba(18,20,44,.4);-webkit-backdrop-filter:blur(8px) grayscale(.5);backdrop-filter:blur(8px) grayscale(.5);font-size:84px;font-weight:800;color:var(--ye);-webkit-text-stroke:4px var(--ink);paint-order:stroke fill;text-shadow:5px 5px 0 var(--ink);opacity:0;pointer-events:none}
+.fl.go{animation:fl 2.4s ease-in-out}@keyframes fl{0%{opacity:0}15%,82%{opacity:1}100%{opacity:0}}
+.sat{position:absolute;width:290px}.sat.p{right:-10px;top:-24px;transform:rotate(2deg)}.sat.w{left:-26px;bottom:-30px;transform:rotate(-2deg)}
+.card{border:2.5px solid var(--ink);border-radius:10px 10px 10px 2px;box-shadow:var(--sh);background:var(--sf);padding:14px;font-size:14px}
+.card .k{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px dashed #E4E2EE;padding:5px 0}.card .k span{color:var(--mu);font-weight:600}.card .k b{font-size:18px}
+.lvn{font-size:46px;font-weight:800;line-height:1;letter-spacing:-.03em}
+.pb{height:16px;border:2.5px solid var(--ink);border-radius:5px 5px 5px 1px;background:var(--bg);overflow:hidden;margin:9px 0 5px}.pb i{display:block;height:100%;background:var(--pu);border-right:2.5px solid var(--ink);transition:width .5s}
+.card small{color:var(--mu);font-size:12px}.card h4{font-size:18px}
+.demo{position:relative;padding:34px 0 40px 28px;max-width:520px}.demo .bd{width:100%;max-width:400px}
+/* motion */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}.js .rv.in{opacity:1;transform:none}
+@media (max-width:900px){.split,.split.rev{grid-template-columns:1fr}.fut{grid-template-columns:1fr 1fr}.nav nav{display:none}}
+@media (max-width:560px){.duo{grid-template-columns:1fr}.fut{grid-template-columns:1fr}.sat.p,.sat.w{position:static;transform:none;width:100%;margin-top:16px}.demo{padding:0}.nav .btn{padding:7px 12px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none}.btn,.pb i{transition:none}.fl.go{animation-duration:.01s}}
+</style></head>
+<body>
+<header class="nav" id="nav"><a class="wm" href="#top"><i></i>BRICK</a><nav aria-label="Main"><a href="#products">Products</a><a href="#philosophy">Philosophy</a></nav><a class="btn" href="#products">Explore products</a></header>
+<main>
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eye">Brick · Two focused tools</p>
+    <h1>Think clearly.<br><span class="hl">Get it done.</span></h1>
+    <p class="sub">Brick is a small family of products built with the same care. One is a place for your thinking. The other turns your intentions into progress you can see.</p>
+    <div class="row"><a class="btn pu" data-p="notes" href="#products">Explore Brick Notes →</a><a class="btn" data-p="day" href="#products">Explore Brickday →</a></div>
+  </div>
+  <div class="stagew" id="sw" aria-hidden="true"><div class="stage" id="stage"></div></div>
+</section>
+
+<section class="sec dark" id="philosophy"><div class="wrap">
+  <p class="eye rv" style="--c:var(--ye)">The philosophy</p>
+  <p class="big rv"><span>Ideas need a place to grow.</span><span class="d">Work needs a system to move forward.</span><span>Brick is both.</span></p>
+  <div class="duo rv"><div><b>Think.</b><p><strong>Brick Notes.</strong> Capture, connect and develop ideas.</p></div><div><b>Execute.</b><p><strong>Brickday.</strong> Turn intentions into visible progress.</p></div></div>
+  <p class="fine rv">Two independent products. Each one stands completely on its own.</p>
+</div></section>
+
+<section class="sec notes" id="products"><div class="wrap">
+  <p class="eye rv">Brick Notes</p>
+  <h2 class="rv">Your space<br>to think.</h2>
+  <p class="sub rv">A calm, fast notebook with a real editor. Write naturally, link ideas together, and keep everything yours.</p>
+  <div class="show rv" style="overflow-x:auto;padding:0 10px 14px 0"><div class="mock nb" id="nb" role="img" aria-label="The Brick Notes editor showing a note called Newton’s Laws, with a sidebar of folders and notes, a formatting toolbar, an equation, a link to another note and a checklist.">
+    <aside><div class="mb"><i></i>Brick Notes</div><div class="row" style="gap:6px"><span class="b pu">+ New note</span><span class="b pl" style="padding:5px 8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" style="display:block"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg></span></div>
+      <div class="chips"><span class="on">All 4</span><span>Unfiled 2</span><span>Physics 2</span></div>
+      <div class="li on"><b>Newton’s Laws</b><small>The net force on an object…</small></div>
+      <div class="li"><b>Momentum</b><small>p = mv</small></div>
+      <div class="li"><b><u>Pinned</u>Reading list</b><small>Chapters 1 to 4</small></div>
+      <div class="li"><b>Ideas</b><small>Quick capture</small></div></aside>
+    <div class="nbm">
+      <div class="bar1"><span class="t">Newton’s Laws</span><em>Saved</em></div>
+      <div class="row" style="gap:6px"><span class="b pl sm">Physics ▾</span><span class="b pl sm">Pin</span><span class="b mi sm">Export .md</span></div>
+      <div class="tb"><b>B</b><i style="font-style:italic;font-weight:700">I</i><u>U</u><span>H1</span><span>H2</span><span>• List</span><span>Tasks</span><span>[[ ]]</span><span>∑</span></div>
+      <div class="pg"><h4>Second law</h4><p>The net force on an object equals its mass times its acceleration, <math><mi>F</mi><mo>=</mo><mi>m</mi><mi>a</mi></math>. See also <span class="nl">Momentum</span>.</p><ul class="cl"><li class="x">Read chapter 3</li><li>Solve problems 1 to 5</li></ul></div>
+      <div class="ft"><span>38 words · 211 characters</span><span>Links: <span class="nl">Momentum</span></span></div>
+    </div></div></div>
+  <ul class="feat rv" style="max-width:640px">
+    <li><b>Write naturally.</b><span>Type # for a heading or - for a list and it formats itself. Checklists, tables, code blocks and equations, with no syntax to memorise.</span></li>
+    <li><b>Link ideas together.</b><span>Type [[ to link one note to another. Links follow a note when you rename it.</span></li>
+    <li><b>Own your notes.</b><span>Autosave as you write. Export any note as Markdown, or a whole folder as a ZIP.</span></li>
+  </ul>
+  <a class="btn pu rv" data-p="notes" href="#products">Explore Brick Notes →</a>
+</div></section>
+
+<section class="sec day"><div class="wrap">
+  <div class="split rev">
+    <div class="demo rv">
+      <div class="mock bd" id="bd">
+        <div class="trw"><h3>Tasks</h3><span class="xpb" id="xpb">135 XP</span><span class="stk">4-day streak</span></div>
+        <div class="qa"><div class="qb"><span class="ph">Add a task and press Enter</span><span class="dp"><i class="sw"></i>Easy ▾</span></div><span class="b pu">Add</span></div>
+        <article class="tk hard" id="tkh"><div><h4>Finish the report draft</h4><p>Include charts and a summary</p><span class="tg hard">Hard · 20 XP</span></div><div class="sd"><button class="b mi" id="dn" type="button">Complete</button><span class="dots">⋯</span></div></article>
+        <article class="tk med"><div><h4>Write the project outline</h4><p>One page, three sections</p><span class="tg med">Medium · 15 XP</span></div><div class="sd"><span class="b mi">Complete</span><span class="dots">⋯</span></div></article>
+        <article class="tk easy"><div><h4>Morning workout</h4><span class="tg easy">Easy · 10 XP</span><span class="tg r">Daily</span></div><div class="sd"><span class="b mi">Complete</span><span class="dots">⋯</span></div></article>
+        <div class="fl" id="fl" aria-hidden="true">+20 XP</div>
+      </div>
+      <div class="sat p card" aria-label="Profile summary"><div class="lvn" id="lv">3</div><small>Current level</small><div class="pb"><i id="pb" style="width:57%"></i></div><small id="pt">85 / 150 XP to level 4</small>
+        <div class="k"><span>Total XP earned</span><b id="te">235</b></div><div class="k"><span>Tasks completed</span><b id="tc">18</b></div><div class="k" style="border:0"><span>Current streak</span><b>4 days</b></div></div>
+      <div class="sat w card" aria-label="Reward"><h4>Take a day off</h4><span class="tg xp" style="background:var(--pu)">500 XP</span><div class="pb"><i id="rb" style="width:27%"></i></div><small id="rt">365 XP to go</small></div>
+      <p class="cap" style="margin-top:56px">A live preview. Press Complete. <button type="button" id="rs">Reset</button></p>
+    </div>
+    <div>
+      <p class="eye rv">Brickday</p>
+      <h2 class="rv">Your space<br>to execute.</h2>
+      <p class="sub rv">Every task has weight. Every finished one adds up. Progress becomes something you can see, measure and feel.</p>
+      <ul class="feat rv">
+        <li><b>Effort, measured.</b><span>Four difficulties, from 10 to 30 XP. Finish a task and watch the number move.</span></li>
+        <li><b>Consistency, visible.</b><span>Levels, streaks, and tasks that repeat daily or weekly.</span></li>
+        <li><b>Rewards you write.</b><span>Create your own rewards, set the XP cost, and earn your way to them.</span></li>
+      </ul>
+      <a class="btn rv" data-p="day" href="#products">Explore Brickday →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <p class="eye rv">The bigger picture</p>
+  <h2 class="rv">One idea.<br>Built brick by brick.</h2>
+  <p class="sub rv">Thinking and doing are two halves of the same habit. Brick Notes helps you think. Brickday helps you execute. More bricks may follow.</p>
+  <div class="fut rv">
+    <div class="fc n"><small>Live</small><b>Brick Notes<br>Think.</b></div>
+    <div class="fc d"><small>Live</small><b>Brickday<br>Execute.</b></div>
+    <div class="fc soon"><small>Coming soon</small><b>Brick Focus</b></div>
+    <div class="fc soon"><small>Coming soon</small><b>Brick Calendar</b></div>
+  </div>
+</div></section>
+
+<section class="sec end"><div class="wrap">
+  <h2 class="rv"><span>Small actions.</span><span>Clear thoughts.</span><span>Something greater.</span></h2>
+  <div class="row rv" style="justify-content:center;margin-top:48px"><a class="btn pu" data-p="notes" href="#products">Explore Brick Notes →</a><a class="btn" data-p="day" href="#products">Explore Brickday →</a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><a class="wm" href="#top"><i></i>BRICK</a><div class="l"><a data-p="notes" href="#products">Brick Notes</a><a data-p="day" href="#products">Brickday</a></div><small>© 2026 Brick. Think clearly. Get it done.</small></div></footer>
+<script>
+/* Product links: change these two URLs to point at your deployed apps. */
+const LINKS={notes:'https://claude.ai/artifact/XTC3skQ4paWTawuwtpBM7k',day:'https://claude.ai/artifact/V3rUGmCdJsXaHC1YQMpacn'};
+const $=s=>document.querySelector(s),RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+document.querySelectorAll('a[data-p]').forEach(a=>{if(LINKS[a.dataset.p]){a.href=LINKS[a.dataset.p];a.target='_blank';a.rel='noopener'}});
+/* nav state */
+const nav=$('#nav'),onS=()=>nav.classList.toggle('on',scrollY>8);addEventListener('scroll',onS,{passive:true});onS();
+/* reveal */
+const rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window&&!RM){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});rv.forEach(e=>io.observe(e))}else rv.forEach(e=>e.classList.add('in'));
+/* hero composition: the same interfaces, scaled and layered */
+const st=$('#stage'),sw=$('#sw');
+['nb','bd'].forEach(id=>{const c=$('#'+id).cloneNode(true);c.removeAttribute('id');c.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));c.setAttribute('aria-hidden','true');c.removeAttribute('role');c.removeAttribute('aria-label');c.querySelectorAll('button').forEach(b=>b.tabIndex=-1);c.style.width=id==='nb'?'660px':'400px';c.dataset.k=id;st.appendChild(c)});
+function fit(){const w=Math.min(sw.clientWidth,1120)-2*Math.min(40,Math.max(20,innerWidth*.05)),n=st.querySelector('[data-k=nb]'),d=st.querySelector('[data-k=bd]');
+  if(w<640){n.style.display='none';const s=Math.min(1,w/410);d.style.cssText='position:absolute;left:0;top:0;width:400px';st.style.transform='scale('+s+')';sw.style.height=(d.offsetHeight*s+24)+'px';return}
+  n.style.display='';n.style.left='0';n.style.top='56px';n.style.transform='rotate(-1.5deg)';d.style.left='600px';d.style.top='0';d.style.transform='rotate(1.5deg)';
+  const s=Math.min(1,w/1000);st.style.transform='scale('+s+')';sw.style.height=((Math.max(n.offsetHeight+56,d.offsetHeight))*s+28)+'px'}
+fit();addEventListener('resize',fit);document.fonts&&document.fonts.ready.then(fit);
+/* live Brickday preview: mirrors the real app's XP and level rules */
+let E=235,SP=100,C=18,done=false;const L=n=>25*n*(n-1);
+function count(el,to,suf,ms){if(RM){el.textContent='+'+to+suf;return}const t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/ms);el.textContent='+'+Math.round(to*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(f)})(t0)}
+function paint(){let l=1;while(E>=L(l+1))l++;const a=L(l),b=L(l+1),bal=E-SP;
+  $('#xpb').textContent=bal+' XP';$('#lv').textContent=l;$('#pb').style.width=Math.round((E-a)/(b-a)*100)+'%';$('#pt').textContent=(E-a)+' / '+(b-a)+' XP to level '+(l+1);$('#te').textContent=E;$('#tc').textContent=C;
+  $('#rb').style.width=Math.min(100,Math.round(bal/500*100))+'%';$('#rt').textContent=(500-bal)+' XP to go'}
+$('#dn').onclick=()=>{if(done)return;done=true;E+=20;C++;const f=$('#fl');f.classList.remove('go');void f.offsetWidth;f.classList.add('go');count(f,20,' XP',1100);
+  $('#dn').outerHTML='<span class="tg easy" style="margin:0" id="dn2">Completed</span>';$('#tkh').style.opacity='.75';paint()};
+$('#rs').onclick=()=>{E=235;C=18;done=false;$('#tkh').style.opacity='';const x=$('#dn2');if(x)x.outerHTML='<button class="b mi" id="dn" type="button">Complete</button>';$('#dn').onclick=$('#dn')?arguments.callee&&null:null;paint()};
+</script>
+</body></html>
