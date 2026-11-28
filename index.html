@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Brick</title>
-<meta name="description" content="Brick Notes is your space to think. Brickday is your space to execute.">
+<meta name="description" content="Brick Notes is your space to think. Brickday is your space to execute. Brick Habits is your space to build.">
 <meta name="theme-color" content="#D3EAFF">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Brick"><meta property="og:title" content="Brick"><meta property="og:description" content="Brick Notes is your space to think. Brickday is your space to execute.">
 <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Brick">
@@ -164,6 +164,19 @@ h1{font-size:clamp(54px,11vw,156px)}
 .js .hero .stagew{animation:up 1.2s 1.4s cubic-bezier(.2,.8,.2,1) both}
 @keyframes up{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.js .ln>span{transform:none;animation:none}.hl,.hl::after,.js .hero .sub,.js .hero .row,.js .hero .hint,.js .hero .stagew{animation:none}}
+
+.habits{background:#DDF8EC;--c:var(--mi)}
+.duo{grid-template-columns:repeat(3,1fr)}.duo b{font-size:clamp(36px,7.5vw,104px)}.duo div:nth-child(2) b{color:var(--ye)}.duo div:last-child b{color:var(--mi)}
+.hb{width:100%;max-width:440px;padding:16px;display:grid;gap:12px;margin:0 auto}
+.blks{display:grid;grid-template-columns:repeat(21,1fr);gap:3px}.blks i{height:16px;border:2px solid var(--ink);border-radius:3px 3px 3px 1px;background:var(--sf)}.blks i.on{background:var(--pu)}
+.hmap{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:6px}.hmap i{aspect-ratio:1;border:2.5px solid var(--ink);border-radius:5px 5px 5px 1px;background:#fff}.hmap i.on{background:var(--mi)}.hmap i.td{outline:3px dashed var(--pd);outline-offset:2px}
+.lockc{border:2.5px dashed var(--mu);border-radius:9px 9px 9px 2px;padding:14px;color:var(--mu);font-weight:800;text-align:center}
+.js .hbw .hb{scale:calc(.88 + .12*var(--p,1));transform-origin:50% 40%}
+#hb #hdn{animation:pulse 1.6s infinite}
+.pick{grid-template-columns:repeat(3,1fr)}.pc b{font-size:clamp(32px,4vw,54px)}.pc.h{background:var(--mi)}.pc span{font-size:19px}
+@media (max-width:1100px){.nav .hm{display:none}}
+@media (max-width:900px){.pick{grid-template-columns:1fr}.pc b{font-size:clamp(38px,9vw,64px)}}
+@media (prefers-reduced-motion:reduce){#hb #hdn{animation:none}}
 /* motion */
 .js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}.js .rv.in{opacity:1;transform:none}
 .js .big.rv,.js .duo.rv,.js .fut.rv,.js .end h2.rv{opacity:1;transform:none;transition:none}
@@ -174,13 +187,13 @@ h1{font-size:clamp(54px,11vw,156px)}
 </style></head>
 <body>
 <div class="prog" aria-hidden="true"></div>
-<header class="nav" id="nav"><a class="wm" href="#top"><i></i>BRICK</a><nav aria-label="Main"><a href="#philosophy" data-s="philosophy">Why Brick</a><a href="#notes" data-s="notes">Brick Notes</a><a href="#day" data-s="day">Brickday</a></nav><a class="btn pu" data-p="notes" href="#notes">Open Notes</a><a class="btn hm" data-p="day" href="#day">Open Brickday</a></header>
+<header class="nav" id="nav"><a class="wm" href="#top"><i></i>BRICK</a><nav aria-label="Main"><a href="#philosophy" data-s="philosophy">Why Brick</a><a href="#notes" data-s="notes">Brick Notes</a><a href="#day" data-s="day">Brickday</a><a href="#habits" data-s="habits">Brick Habits</a></nav><a class="btn pu" data-p="notes" href="#notes">Open Notes</a><a class="btn hm" data-p="day" href="#day">Open Brickday</a></header>
 <main>
 <section class="hero" id="top">
   <div class="wrap">
     <h1><span class="ln"><span>Think clearly.</span></span><br><span class="hl">Get it done.</span></h1>
     <p class="sub"><b style="color:var(--ink)">Building it Brick By Brick</b></p>
-    <div class="row"><a class="btn pu" data-p="notes" href="#notes">Explore Brick Notes →</a><a class="btn" data-p="day" href="#day">Explore Brickday →</a></div>
+    <div class="row"><a class="btn pu" data-p="notes" href="#notes">Explore Brick Notes →</a><a class="btn" data-p="day" href="#day">Explore Brickday →</a><a class="btn mi" data-p="habits" href="#habits">Explore Brick Habits →</a></div>
     <p class="hint">Scroll to see them in action ↓</p>
   </div>
   <div class="stagew" id="sw" aria-hidden="true"><div class="stage" id="stage"></div></div>
@@ -188,8 +201,8 @@ h1{font-size:clamp(54px,11vw,156px)}
 
 <section class="sec dark" id="philosophy"><div class="wrap">
   <p class="eye rv" style="--c:var(--ye)">Why Brick</p>
-  <p class="big"><span class="sc">Ideas need a place to grow.</span><span class="d sc">Work needs a system to move forward.</span><span class="sc">Brick is both.</span></p>
-  <div class="duo sc"><div><b>Think.</b><p><strong>Brick Notes.</strong> Capture and connect ideas.</p></div><div><b>Execute.</b><p><strong>Brickday.</strong> Make progress visible.</p></div></div>
+  <p class="big"><span class="sc">Ideas need a place to grow.</span><span class="d sc">Work needs a system to move forward.</span><span class="sc">Habits need time to stick.</span><span class="sc">Brick is all three.</span></p>
+  <div class="duo sc"><div><b>Think.</b><p><strong>Brick Notes.</strong> Capture and connect ideas.</p></div><div><b>Execute.</b><p><strong>Brickday.</strong> Make progress visible.</p></div><div><b>Build.</b><p><strong>Brick Habits.</strong> One habit at a time.</p></div></div>
 </div></section>
 
 <section class="sec notes" id="notes"><div class="wrap">
@@ -248,26 +261,52 @@ h1{font-size:clamp(54px,11vw,156px)}
   </div>
 </div></section>
 
+<section class="sec habits" id="habits"><div class="wrap">
+  <div class="split">
+    <div>
+      <p class="eye rv">Brick Habits</p>
+      <h2 class="rv">Your space<br>to build.</h2>
+      <p class="sub rv">One habit. 21 days. Then one more.</p>
+      <ul class="feat cards rv">
+        <li><b>Start with one.</b><span>Pick one small thing to do every day.</span><em>Day 1–21: Habit 1</em></li>
+        <li><b>Show up for 21 days.</b><span>Miss a day? Nothing resets.</span><em>Kind, not strict</em></li>
+        <li><b>Then add one more.</b><span>Old habits keep going. Your routine grows.</span><em>Day 22: Habit 1 + 2</em></li>
+      </ul>
+      <a class="btn lg mi rv" data-p="habits" href="#habits">Open Brick Habits →</a>
+    </div>
+    <div class="hbw sc rv">
+      <div class="mock hb" id="hb">
+        <div class="trw"><h3>Habits</h3><span class="xpb" style="background:var(--mi)">Day 7 of 21</span></div>
+        <div class="blks" id="bk"></div>
+        <article class="tk easy"><div style="grid-column:1/-1;display:flex;justify-content:space-between;gap:10px;align-items:center"><h4>Revise for 30 minutes</h4><button class="b mi" id="hdn" type="button">Mark done</button></div><div class="hmap" id="hm" style="grid-column:1/-1"></div></article>
+        <div class="lockc">🔒 Habit 2 unlocks on day 22</div>
+      </div>
+      <p class="cap" style="margin-top:24px"><b>Try it:</b> tap Mark done. Tap again to undo.</p>
+    </div>
+  </div>
+</div></section>
+
 <section class="sec"><div class="wrap">
   <p class="eye rv">Choose your brick</p>
-  <h2 class="rv">Start with one.<br>Use both.</h2>
+  <h2 class="rv">Start with one.<br>Use all.</h2>
   <div class="pick">
     <a class="pc n sc" data-p="notes" href="#notes"><small>Think</small><b>Brick Notes</b><span>Write, link and keep your ideas.</span><i class="btn lg pu">Open →</i></a>
     <a class="pc d sc" data-p="day" href="#day"><small>Execute</small><b>Brickday</b><span>Finish tasks, earn XP, keep your streak.</span><i class="btn lg">Open →</i></a>
+    <a class="pc h sc" data-p="habits" href="#habits"><small>Build</small><b>Brick Habits</b><span>One habit. 21 days. Then one more.</span><i class="btn lg mi">Open →</i></a>
   </div>
   <p class="soon rv">Next up <span>Brick Focus</span><span>Brick Calendar</span></p>
 </div></section>
 
 <section class="sec end"><i class="fb sc" style="--x:7%;--y:16%;--c:var(--pu)"></i><i class="fb sc" style="--x:86%;--y:12%;--c:var(--ye)"></i><i class="fb sc" style="--x:12%;--y:72%;--c:var(--mi)"></i><i class="fb sc" style="--x:82%;--y:70%;--c:var(--co)"></i><div class="wrap">
   <h2><span class="sc">Small actions.</span><span class="sc">Clear thoughts.</span><span class="sc">Something greater.</span></h2>
-  <div class="row rv" style="justify-content:center;margin-top:48px"><a class="btn lg pu" data-p="notes" href="#notes">Open Brick Notes →</a><a class="btn lg" data-p="day" href="#day">Open Brickday →</a></div>
+  <div class="row rv" style="justify-content:center;margin-top:48px"><a class="btn lg pu" data-p="notes" href="#notes">Open Brick Notes →</a><a class="btn lg" data-p="day" href="#day">Open Brickday →</a><a class="btn lg mi" data-p="habits" href="#habits">Open Brick Habits →</a></div>
   <p class="sub rv" style="margin:28px auto 0;text-align:center">Pick one. They work better together.</p>
 </div></section>
 </main>
-<footer><div class="wrap"><a class="wm" href="#top"><i></i>BRICK</a><div class="l"><a data-p="notes" href="#notes">Brick Notes</a><a data-p="day" href="#notes">Brickday</a></div><small>© 2026 Brick. Think clearly. Get it done.</small></div></footer>
+<footer><div class="wrap"><a class="wm" href="#top"><i></i>BRICK</a><div class="l"><a data-p="notes" href="#notes">Brick Notes</a><a data-p="day" href="#notes">Brickday</a><a data-p="habits" href="#habits">Brick Habits</a></div><small>© 2026 Brick. Think clearly. Get it done.</small></div></footer>
 <script>
 /* Product links: change these two URLs to point at your deployed apps. */
-const LINKS={notes:'https://sadique010.github.io/Bricknotes/',day:'https://sadique010.github.io/Brickday/'};
+const LINKS={notes:'https://sadique010.github.io/Bricknotes/',day:'https://sadique010.github.io/Brickday/',habits:'https://sadique010.github.io/Brickhabits/'};
 const $=s=>document.querySelector(s),RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
 document.querySelectorAll('a[data-p]').forEach(a=>{if(LINKS[a.dataset.p]){a.href=LINKS[a.dataset.p];a.target='_blank';a.rel='noopener'}});
 /* nav state */
@@ -303,5 +342,10 @@ function complete(){if(done)return;done=true;E+=20;C++;const f=$('#fl');f.classL
   $('#dn').outerHTML='<span class="tg easy" style="margin:0" id="dn2">Completed</span>';$('#tkh').style.opacity='.75';paint()}
 $('#dn').onclick=complete;
 $('#rs').onclick=()=>{E=235;C=18;done=false;$('#tkh').style.opacity='';const x=$('#dn2');if(x){x.outerHTML='<button class="b mi" id="dn" type="button">Complete</button>';$('#dn').onclick=complete}paint()};
+
+/* Brick Habits preview */
+let hd=false;const hm=$('#hm'),bk=$('#bk'),on=i=>i<6||(i==6&&hd);
+function hpaint(){bk.innerHTML=Array.from({length:21},(_,i)=>'<i'+(i<7?' class="on"':'')+'></i>').join('');hm.innerHTML=Array.from({length:21},(_,i)=>'<i class="'+(on(i)?'on ':'')+(i==6?'td':'')+'"></i>').join('');$('#hdn').textContent=hd?'Done ✓':'Mark done'}
+$('#hdn').onclick=()=>{hd=!hd;hpaint()};hpaint();
 </script>
 </body></html>
